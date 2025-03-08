@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cafe-pod
+spec:
+  containers:
+    - name: cafe-container
+      image: busybox
+      command: ["sleep", "3600"]
+      env:
+        - name: MENU_DEL_DIA
+          valueFrom:
+            configMapKeyRef:
+              name: cafe-config
+              key: menu
+        - name: WIFI_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: cafe-secret
+              key: wifi_password
