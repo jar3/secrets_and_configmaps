@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cafe-config
+data:
+  menu: "Café, Té, Chocolate caliente"
+  horario: "08:00 - 20:00"
